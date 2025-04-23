@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7233779828892717073}
-  - component: {fileID: 6793783323186587917}
+  - component: {fileID: 5707095638380138967}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6793783323186587917
+--- !u!114 &5707095638380138967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2329929152691069856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8298533b7e0321740925fee27985fb8c, type: 3}
+  m_Script: {fileID: 11500000, guid: fde39daa970ece948928b65587f57030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spriteRenderer: {fileID: 0}
