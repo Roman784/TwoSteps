@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ade22f320d09f14482cd5730b45925c, type: 3}
+  m_Name: CastleCourtyardGrassTile
+  m_EditorClassIdentifier: 
+  _tiles:
+  - {fileID: 1517043128, guid: ad911af1819fe7146a505dca60a0f562, type: 3}
+  - {fileID: 813708147, guid: ad911af1819fe7146a505dca60a0f562, type: 3}
+  _prefab: {fileID: 6793783323186587917, guid: 60e16d3aa14499c459466978cda4bd47, type: 3}
