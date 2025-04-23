@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GameplayLevelsMode;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utils;
@@ -9,15 +10,21 @@ namespace GameRoot
     {
         private Coroutine _loading;
 
-        public void LoadAndRunGameplayLevelsMode()
+        public void LoadAndRunGameplayLevelsMode(GameplayLevelsModeEnterParams enterParams)
         {
             StopLoading();
-            Coroutines.Start(LoadAndRunScene(Scenes.GAMEPLAY_LEVELS_MODE));
+            Coroutines.Start(LoadAndRunScene<GameplayLevelsModeEntryPoint, GameplayLevelsModeEnterParams>
+                (Scenes.GAMEPLAY_LEVELS_MODE, enterParams));
         }
 
-        private IEnumerator LoadAndRunScene(string sceneName)
+        private IEnumerator LoadAndRunScene<TEntryPoint, TEnterParams>(string sceneName, TEnterParams enterParams)
+            where TEntryPoint : SceneEntryPoint
+            where TEnterParams : SceneEnterParams
         {
             yield return LoadScene(sceneName);
+
+            var sceneEntryPoint = Object.FindObjectOfType<TEntryPoint>();
+            yield return sceneEntryPoint.Run(enterParams);
         }
 
         private IEnumerator LoadScene(string sceneName)

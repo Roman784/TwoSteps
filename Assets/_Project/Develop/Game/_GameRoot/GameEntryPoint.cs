@@ -1,3 +1,4 @@
+using GameplayLevelsMode;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using Utils;
@@ -25,11 +26,13 @@ namespace GameRoot
 #if UNITY_EDITOR
             if (sceneName == Scenes.GAMEPLAY_LEVELS_MODE)
             {
-                _sceneLoader.LoadAndRunGameplayLevelsMode();
+                var defaultGameplayLevelsModeEnterParams = new GameplayLevelsModeEnterParams(Scenes.BOOT);
+                _sceneLoader.LoadAndRunGameplayLevelsMode(defaultGameplayLevelsModeEnterParams);
                 return;
             }
 #endif
-            _sceneLoader.LoadAndRunGameplayLevelsMode();
+            var enterParams = new GameplayLevelsModeEnterParams(Scenes.BOOT);
+            _sceneLoader.LoadAndRunGameplayLevelsMode(enterParams);
 
         }
     }
