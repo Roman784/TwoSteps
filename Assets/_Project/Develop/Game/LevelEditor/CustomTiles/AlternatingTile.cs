@@ -1,18 +1,17 @@
-using LevelEditor;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace CustomTiles
+namespace LevelEditor
 {
     public class AlternatingTile : TileBase
     {
         [SerializeField] private Sprite[] _tiles;
-        [SerializeField] private Cell _prefab;
+        [SerializeField] private GameObject _prefab;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
         {
-            tileData.gameObject = _prefab.gameObject;
+            tileData.gameObject = _prefab;
 
             uint mask = (uint)(position.x + position.y);
             tileData.sprite = _tiles[mask % 2];
