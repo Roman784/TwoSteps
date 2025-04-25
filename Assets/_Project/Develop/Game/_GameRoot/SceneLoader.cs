@@ -1,14 +1,23 @@
 ﻿using GameplayLevelsMode;
 using System.Collections;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utils;
+using Zenject;
 
 namespace GameRoot
 {
     public class SceneLoader
     {
         private Coroutine _loading;
+        private UIRoot _uiRoot;
+
+        [Inject]
+        private void Construct(UIRoot uiRoot)
+        {
+            _uiRoot = uiRoot;
+        }
 
         public void LoadAndRunGameplayLevelsMode(GameplayLevelsModeEnterParams enterParams)
         {
@@ -21,10 +30,14 @@ namespace GameRoot
             where TEntryPoint : SceneEntryPoint
             where TEnterParams : SceneEnterParams
         {
+            yield return _uiRoot.SetLoadingScreen(true);
+
             yield return LoadScene(sceneName);
 
             var sceneEntryPoint = Object.FindObjectOfType<TEntryPoint>();
             yield return sceneEntryPoint.Run(enterParams);
+
+            yield return _uiRoot.SetLoadingScreen(false);
         }
 
         private IEnumerator LoadScene(string sceneName)

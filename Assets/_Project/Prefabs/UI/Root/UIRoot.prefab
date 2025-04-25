@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d679f372afc5647ad0d0f85c25de6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadingScreen: {fileID: 8825393824846584445}
 --- !u!1 &5330054060793854658
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,8 +221,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7895716078360693573}
+  - component: {fileID: 8825393824846584445}
   m_Layer: 0
-  m_Name: LoadScreen
+  m_Name: LoadingScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,6 +245,19 @@ Transform:
   - {fileID: 565351807573941146}
   m_Father: {fileID: 1266809874294528526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8825393824846584445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047402807518618384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051e939126f79be488940007c7e265d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _view: {fileID: 8138203986523189181}
 --- !u!1 &8138203986523189181
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6633518525681905090
 RectTransform:
   m_ObjectHideFlags: 0
