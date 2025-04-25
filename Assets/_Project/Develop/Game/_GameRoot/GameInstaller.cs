@@ -1,3 +1,4 @@
+using PlayerInput;
 using UI;
 using UnityEngine;
 using Zenject;
@@ -11,12 +12,18 @@ namespace GameRoot
         public override void InstallBindings()
         {
             BindSceneLoader();
+            BindPlayerInput();
             BindUI();
         }
 
         private void BindSceneLoader()
         {
             Container.Bind<SceneLoader>().AsTransient();
+        }
+
+        private void BindPlayerInput()
+        {
+            Container.Bind<IPlayerInput>().To<KeyboardInput>().AsTransient();
         }
 
         private void BindUI()
